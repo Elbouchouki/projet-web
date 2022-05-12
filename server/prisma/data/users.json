@@ -1,0 +1,122 @@
+[
+  {
+    "nom": "ahmed",
+    "email": "ahmed@mail.com",
+    "password": "ahmedpass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "aziz",
+    "email": "aziz@mail.com",
+    "password": "azizpass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "mustapha",
+    "email": "mustapha@mail.com",
+    "password": "mustaphapass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "chaimae",
+    "email": "chaimae@mail.com",
+    "password": "chaimaepass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "safae",
+    "email": "safae@mail.com",
+    "password": "safaepass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "oussama",
+    "email": "oussama@mail.com",
+    "password": "oussamapass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "naiema",
+    "email": "naiema@mail.com",
+    "password": "naiemapass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "abdelghafour",
+    "email": "abdelghafour@mail.com",
+    "password": "abdelghafourpass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "doua",
+    "email": "doua@mail.com",
+    "password": "douapass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "hamida",
+    "email": "hamida@mail.com",
+    "password": "hamidapass",
+    "role": "AUTHOR"
+  },
+  {
+    "nom": "hassan",
+    "email": "hassan@mail.com",
+    "password": "hassanpass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "hassina",
+    "email": "hassina@mail.com",
+    "password": "hassinapass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "amina",
+    "email": "amina@mail.com",
+    "password": "aminapass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "aziza",
+    "email": "aziza@mail.com",
+    "password": "azizapass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "fatiha",
+    "email": "fatiha@mail.com",
+    "password": "fatihapass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "omar",
+    "email": "omar@mail.com",
+    "password": "omarpass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "anas",
+    "email": "anas@mail.com",
+    "password": "anaspass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "mourad",
+    "email": "mourad@mail.com",
+    "password": "mouradpass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "ayoub",
+    "email": "ayoub@mail.com",
+    "password": "ayoubpass",
+    "role": "ADMIN"
+  },
+  {
+    "nom": "mohamed",
+    "email": "mohamed@mail.com",
+    "password": "mohamedpass",
+    "role": "ADMIN"
+  }
+]
