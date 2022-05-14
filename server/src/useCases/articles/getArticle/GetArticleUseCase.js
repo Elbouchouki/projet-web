@@ -6,6 +6,17 @@ class GetArticleUseCase {
       where: {
         id,
       },
+      include: {
+        categories: {
+          include: {
+            categorie: {
+              select: {
+                nom: true,
+              },
+            },
+          },
+        },
+      },
     });
     return article;
   }
