@@ -1,7 +1,9 @@
-const { client } = require("../../prisma/client");
+const { client } = require("../../../prisma/client");
 const { compare } = require("bcryptjs");
-const { GenerateToken } = require("../../provider/GenerateToken");
-const { GenerateRefreshToken } = require("../../provider/GenerateRefreshToken");
+const { GenerateToken } = require("../../../provider/GenerateToken");
+const {
+  GenerateRefreshToken,
+} = require("../../../provider/GenerateRefreshToken");
 
 class AuthenticateUserUserCase {
   async execute({ email, password }) {

@@ -1,7 +1,9 @@
 const dayjs = require("dayjs");
-const { client } = require("../../prisma/client");
-const { GenerateRefreshToken } = require("../../provider/GenerateRefreshToken");
-const { GenerateToken } = require("../../provider/GenerateToken");
+const { client } = require("../../../prisma/client");
+const {
+  GenerateRefreshToken,
+} = require("../../../provider/GenerateRefreshToken");
+const { GenerateToken } = require("../../../provider/GenerateToken");
 
 class RefreshTokenUserUseCase {
   async execute(refresh_token) {

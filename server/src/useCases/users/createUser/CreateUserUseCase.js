@@ -1,11 +1,7 @@
-const { client } = require("../../prisma/client");
+const { client } = require("../../../prisma/client");
 const { hash } = require("bcryptjs");
 
 class CreateUserUseCase {
-  // nom
-  // email
-  // password
-  // role
   async execute({ nom, email, password, role }) {
     const userAlreadyExists = await client.utilisateur.findFirst({
       where: {

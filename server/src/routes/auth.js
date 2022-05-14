@@ -1,10 +1,10 @@
 const authRouter = require("express").Router();
 const {
   AuthenticateUserUController,
-} = require("../useCases/authenticateUser/AuthenticateUserController");
+} = require("../useCases/authentication/authenticateUser/AuthenticateUserController");
 const {
   RefreshTokenUserController,
-} = require("../useCases/refreshTokenUser/RefreshTokenUserController");
+} = require("../useCases/authentication/refreshTokenUser/RefreshTokenUserController");
 
 const authenticateUserController = new AuthenticateUserUController();
 const refreshTokenUserController = new RefreshTokenUserController();
