@@ -8,6 +8,6 @@ module.exports = function (app) {
   app.use("/auth", authRouter);
   app.use("/article", articlesRouter);
   app.use("/commentaire", commentairesRouter);
-  app.use("/cateogie", categoriesRouter);
+  app.use("/categorie", categoriesRouter);
   app.use("/users", usersRouter);
 };

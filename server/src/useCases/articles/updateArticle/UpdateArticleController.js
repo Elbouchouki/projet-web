@@ -22,7 +22,7 @@ class UpdateArticleController {
     }
     res.json({
       status: "UPDATED",
-      message: "Article: " + id + " successfuly updated",
+      message: "Article " + id + " updated successfuly",
       article: updatedArtcile,
     });
   }
