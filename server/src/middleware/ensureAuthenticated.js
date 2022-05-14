@@ -9,10 +9,12 @@ const ensureAuthenticated = (req, res, next) => {
 
   const [, token] = authToken.split(" ");
 
-  const isValid = verify(token, "Elbouchouki");
-  if (!isValid) throw new Error("Token invalid");
-
-  return next();
+  try {
+    verify(token, process.env.PRIVATE_SECRET);
+    return next();
+  } catch (error) {
+    throw new Error("Token invalid");
+  }
 };
 
 module.exports = { ensureAuthenticated };

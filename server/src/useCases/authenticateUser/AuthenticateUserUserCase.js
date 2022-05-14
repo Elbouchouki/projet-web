@@ -1,6 +1,7 @@
 const { client } = require("../../prisma/client");
 const { compare } = require("bcryptjs");
-const { sign } = require("jsonwebtoken");
+const { GenerateToken } = require("../../provider/GenerateToken");
+const { GenerateRefreshToken } = require("../../provider/GenerateRefreshToken");
 
 class AuthenticateUserUserCase {
   async execute({ email, password }) {
@@ -15,11 +16,17 @@ class AuthenticateUserUserCase {
 
     if (!passwordMath) throw new Error("Email or password incorrect");
 
-    const token = sign({}, "Elbouchouki", {
-      subject: userAlreadyExists.id,
-      expiresIn: "30s",
+    const generateToken = new GenerateToken();
+    const token = await generateToken.execute(userAlreadyExists.id);
+    await client.refreshToken.deleteMany({
+      where: {
+        userId: userAlreadyExists.id,
+      },
     });
-
+    const generateRefreshToken = new GenerateRefreshToken();
+    const refreshToken = await generateRefreshToken.execute(
+      userAlreadyExists.id
+    );
     return {
       user: {
         id: userAlreadyExists.id,
@@ -27,6 +34,7 @@ class AuthenticateUserUserCase {
         email: userAlreadyExists.email,
       },
       token,
+      refreshToken,
     };
   }
 }
