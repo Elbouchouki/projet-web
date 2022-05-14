@@ -1,4 +1,7 @@
 const {
+  CreateCategorieController,
+} = require("../useCases/categories/createCategorie/CreateCategorieController");
+const {
   DeleteCategorieController,
 } = require("../useCases/categories/deleteCategorie/DeleteCategorieController");
 const {
@@ -17,10 +20,12 @@ const getAllCategoriesController = new GetAllCategoriesController();
 const getCategorieController = new GetCategorieController();
 const updateCategorieController = new UpdateCategorieController();
 const deleteCategorieController = new DeleteCategorieController();
+const createCategorieController = new CreateCategorieController();
 
 categoriesRouter.get("/", getAllCategoriesController.handle);
 categoriesRouter.get("/:id", getCategorieController.handle);
 categoriesRouter.patch("/", updateCategorieController.handle);
+categoriesRouter.post("/", createCategorieController.handle);
 categoriesRouter.delete("/:id", deleteCategorieController.handle);
 
 module.exports = { categoriesRouter };
