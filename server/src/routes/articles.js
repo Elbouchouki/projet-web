@@ -16,6 +16,9 @@ const {
 const {
   AddArticleToCategorieController,
 } = require("../useCases/categorieOnArticle/addArticleToCategorie/addArticleToCategorieController");
+const {
+  DeleteArticleFromCategorieController,
+} = require("../useCases/categorieOnArticle/deleteArticleFromCategorie/deleteArticleFromCategorieController");
 
 const articlesRouter = require("express").Router();
 
@@ -26,6 +29,8 @@ const updateArticleController = new UpdateArticleController();
 const deleteArticleController = new DeleteArticleController();
 
 const addArticleToCategorieController = new AddArticleToCategorieController();
+const deleteArticleFromCategorieController =
+  new DeleteArticleFromCategorieController();
 
 articlesRouter.get("/", getAllArticlesController.handle);
 articlesRouter.get("/:id", getArticleController.handle);
@@ -34,5 +39,9 @@ articlesRouter.post("/", createArticleController.handle);
 articlesRouter.delete("/:id", deleteArticleController.handle);
 
 articlesRouter.post("/addCategorie", addArticleToCategorieController.handle);
+articlesRouter.post(
+  "/deleteCategorie",
+  deleteArticleFromCategorieController.handle
+);
 
 module.exports = { articlesRouter };

@@ -2,6 +2,7 @@ const errorHandling = (err, req, res, next) => {
   var status = undefined;
   if (err.message.includes("Already Exists")) res.status(409);
   if (err.message.includes("Already belong to")) res.status(409);
+  if (err.message.includes("Doesn't belong to")) res.status(409);
 
   if (err.message.includes("not found")) {
     status = "Not Found";
