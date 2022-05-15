@@ -11,4 +11,4 @@ require("./routes")(app);
 
 app.use(errorHandling);
 
-app.listen(4000, () => console.log("Running on port 4k"));
+app.listen(process.env.PORT || 4000, () => console.log("Running on port 4k"));

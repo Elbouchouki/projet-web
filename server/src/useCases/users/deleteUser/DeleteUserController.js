@@ -5,13 +5,13 @@ class DeleteUserController {
     const { id } = req.params;
     const deleteUserUseCase = new DeleteUserUseCase();
     try {
-      await deleteUserUseCase.execute(userId);
+      await deleteUserUseCase.execute(id);
     } catch (error) {
       throw new Error("User Doesn't Exists");
     }
     res.json({
       status: "Deleted",
-      message: "User: " + userId,
+      message: "User: " + id,
     });
   }
 }
