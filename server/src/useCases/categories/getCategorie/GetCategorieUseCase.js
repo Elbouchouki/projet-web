@@ -6,6 +6,13 @@ class GetCategorieUseCase {
       where: {
         id,
       },
+      include: {
+        Articles: {
+          include: {
+            article: true,
+          },
+        },
+      },
     });
     return categorie;
   }
