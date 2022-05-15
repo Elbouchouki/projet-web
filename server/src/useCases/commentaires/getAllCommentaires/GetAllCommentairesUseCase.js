@@ -2,7 +2,7 @@ const { client } = require("../../../prisma/client");
 
 class GetAllCommentairesUseCase {
   async execute() {
-    const commentaires = await client.article.findMany({});
+    const commentaires = await client.commentaire.findMany({});
     return commentaires;
   }
 }
