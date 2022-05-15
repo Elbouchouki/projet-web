@@ -5,8 +5,21 @@ const articles = require("./data/articles.json");
 const categoriesOnArticles = require("./data/categoriesOnArticles.json");
 const { hash } = require("bcryptjs");
 
+async function emptyDB() {
+  console.log("Emptying DB");
+  await client.$executeRawUnsafe("DELETE FROM CategoriesOnArticles");
+  await client.$executeRawUnsafe("DELETE FROM Commentaire");
+  await client.$executeRawUnsafe("DELETE FROM Article");
+  await client.$executeRawUnsafe("DELETE FROM Categorie");
+  await client.$executeRawUnsafe("DELETE FROM RefreshToken");
+  await client.$executeRawUnsafe("DELETE FROM Utilisateur");
+  console.log("Emptying DB Done!");
+}
+
 async function seed() {
   var id = 1;
+  await emptyDB();
+
   for (const user of users) {
     const hashedPass = await hash(user.password, 8);
 
@@ -20,11 +33,12 @@ async function seed() {
       },
     });
   }
-  console.log("Users Done!");
+  console.log("Seeding Users Done!");
   await client.categorie.createMany({
     data: categories,
   });
-  console.log("Categories Done!");
+  console.log("Seeding Categories Done!");
+
   for (const article of articles) {
     await client.article.create({
       data: {
@@ -37,12 +51,12 @@ async function seed() {
       },
     });
   }
-  console.log("Articles Done!");
+  console.log("Seeding Articles Done!");
   await client.categoriesOnArticles.createMany({
     data: categoriesOnArticles,
     skipDuplicates: true,
   });
-  console.log("CategoryArticleLink Done!");
+  console.log("Seeding CategoryArticleLink Done!");
 }
 
 seed()
