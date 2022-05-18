@@ -3,7 +3,6 @@ const { expect } = require("chai");
 const testUser = (server, auth) => {
   var id = "";
   describe("User UseCase Unit Tests", function () {
-    console.log("Token: " + auth.token);
     it("should successfully add a User", async function () {
       const user = {
         nom: "elbouchouki",

@@ -6,7 +6,7 @@ class CreateCategorieController {
     const createCategorieUseCase = new CreateCategorieUseCase();
     const createdCategorie = await createCategorieUseCase.execute(nom);
     res.json({
-      article: createdCategorie,
+      categorie: createdCategorie,
     });
   }
 }

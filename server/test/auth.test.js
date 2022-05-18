@@ -19,7 +19,7 @@ const testAuth = (server, auth) => {
       expect(authResponse.user.email).equal("ahmed@mail.com");
       expect(authResponse.user.role).equal("AUTHOR");
       auth.token = authResponse.token;
-      auth.refreshToken = authResponse.refreshToken;
+      auth.refreshToken = authResponse.refreshToken.id;
     });
     it("should rise error user not found", async function () {
       const authInfo = {
@@ -36,41 +36,17 @@ const testAuth = (server, auth) => {
       const authResponse = JSON.parse(response.text);
       expect(authResponse.status).equal("Not Found");
     });
-    // it("should rise a conflict error because of adding a Duplicate User", async function () {
-    //   const user = {
-    //     nom: "elbouchouki",
-    //     email: "elbouchouki@gmail.com",
-    //     password: "elbouchouki",
-    //     role: "ADMIN",
-    //   };
-    //   await server
-    //     .post("/users")
-    //     .send(user)
-    //     .set("Authorization", "bearer " + token)
-    //     .set("Accept", "application/json")
-    //     .expect(409);
-    // });
-    // it("should successfully get the recently added user", async function () {
-    //   const response = await server
-    //     .get("/users/" + id)
-    //     .set("Authorization", "bearer " + token)
-    //     .set("Accept", "application/json")
-    //     .expect(200);
-    //   const user = await JSON.parse(response.text);
-    //   expect(user.user.nom).equal("elbouchouki");
-    //   expect(user.user.email).equal("elbouchouki@gmail.com");
-    //   expect(user.user.role).equal("ADMIN");
-    // });
-    // it("should successfully delete the recently added user", async function () {
-    //   const response = await server
-    //     .delete("/users/" + id)
-    //     .set("Authorization", "bearer " + token)
-    //     .set("Accept", "application/json")
-    //     .expect(200);
-    //   const responseParsed = JSON.parse(response.text);
-    //   expect(responseParsed.status).equal("Deleted");
-    //   expect(responseParsed.message).equal("User: " + id);
-    // });
+    it("should successfully generate new token using refreshToken", async function () {
+      const reqBody = {
+        refreshToken: auth.refreshToken,
+      };
+
+      const response = await server
+        .post("/auth/refreshToken/")
+        .send(reqBody)
+        .set("Accept", "application/json")
+        .expect(200);
+    });
   });
 };
 
