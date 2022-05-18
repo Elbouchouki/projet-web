@@ -22,10 +22,24 @@ const updateCategorieController = new UpdateCategorieController();
 const deleteCategorieController = new DeleteCategorieController();
 const createCategorieController = new CreateCategorieController();
 
+const { ensureAuthenticated } = require("../middleware/ensureAuthenticated");
+
 categoriesRouter.get("/", getAllCategoriesController.handle);
 categoriesRouter.get("/:id", getCategorieController.handle);
-categoriesRouter.patch("/", updateCategorieController.handle);
-categoriesRouter.post("/", createCategorieController.handle);
-categoriesRouter.delete("/:id", deleteCategorieController.handle);
+categoriesRouter.patch(
+  "/",
+  ensureAuthenticated,
+  updateCategorieController.handle
+);
+categoriesRouter.post(
+  "/",
+  ensureAuthenticated,
+  createCategorieController.handle
+);
+categoriesRouter.delete(
+  "/:id",
+  ensureAuthenticated,
+  deleteCategorieController.handle
+);
 
 module.exports = { categoriesRouter };

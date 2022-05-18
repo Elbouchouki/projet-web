@@ -20,8 +20,8 @@ const {
   DeleteArticleFromCategorieController,
 } = require("../useCases/categorieOnArticle/deleteArticleFromCategorie/deleteArticleFromCategorieController");
 
+const { ensureAuthenticated } = require("../middleware/ensureAuthenticated");
 const articlesRouter = require("express").Router();
-
 const createArticleController = new CreateArticleController();
 const getAllArticlesController = new GetAllArticlesController();
 const getArticleController = new GetArticleController();
@@ -34,13 +34,22 @@ const deleteArticleFromCategorieController =
 
 articlesRouter.get("/", getAllArticlesController.handle);
 articlesRouter.get("/:id", getArticleController.handle);
-articlesRouter.patch("/", updateArticleController.handle);
-articlesRouter.post("/", createArticleController.handle);
-articlesRouter.delete("/:id", deleteArticleController.handle);
+articlesRouter.patch("/", ensureAuthenticated, updateArticleController.handle);
+articlesRouter.post("/", ensureAuthenticated, createArticleController.handle);
+articlesRouter.delete(
+  "/:id",
+  ensureAuthenticated,
+  deleteArticleController.handle
+);
 
-articlesRouter.post("/addCategorie", addArticleToCategorieController.handle);
+articlesRouter.post(
+  "/addCategorie",
+  ensureAuthenticated,
+  addArticleToCategorieController.handle
+);
 articlesRouter.post(
   "/deleteCategorie",
+  ensureAuthenticated,
   deleteArticleFromCategorieController.handle
 );
 

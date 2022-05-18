@@ -22,10 +22,20 @@ const updateCommentaireController = new UpdateCommentaireController();
 const deleteCommentaireController = new DeleteCommentaireController();
 const createCommentaireController = new CreateCommentaireController();
 
+const { ensureAuthenticated } = require("../middleware/ensureAuthenticated");
+
 commentairesRouter.get("/", getAllCommentairesController.handle);
 commentairesRouter.get("/:id", getCommentaireController.handle);
-commentairesRouter.patch("/", updateCommentaireController.handle);
+commentairesRouter.patch(
+  "/",
+  ensureAuthenticated,
+  updateCommentaireController.handle
+);
 commentairesRouter.post("/", createCommentaireController.handle);
-commentairesRouter.delete("/:id", deleteCommentaireController.handle);
+commentairesRouter.delete(
+  "/:id",
+  ensureAuthenticated,
+  deleteCommentaireController.handle
+);
 
 module.exports = { commentairesRouter };

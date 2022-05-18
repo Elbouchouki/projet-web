@@ -34,6 +34,7 @@ class AuthenticateUserUserCase {
         id: userAlreadyExists.id,
         nom: userAlreadyExists.nom,
         email: userAlreadyExists.email,
+        role: userAlreadyExists.role,
       },
       token,
       refreshToken,
