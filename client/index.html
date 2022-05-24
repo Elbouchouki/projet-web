@@ -6,14 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            content: ["./src/**/*.{html,js}"],
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+        }
+    </script>
     <title>Elbouchouki</title>
 </head>
 
-<body class="flex flex-col h-screen justify-between">
+<body class="flex flex-col h-screen bg-white dark:bg-gray-900">
 
     <header id="header"></header>
 
-    <main id="app" class="mb-auto h-10 bg-green-500">Content</main>
+    <main id="app" class="flex-grow">Content</main>
 
     <footer id="footer"></footer>
 

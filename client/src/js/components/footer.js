@@ -4,7 +4,7 @@ class Footer extends HTMLElement {
     super();
 
     this.innerHTML = /*html*/ `
-        <footer class="p-4 bg-white shadow md:px-6 md:py-8 dark:bg-gray-800">
+        <footer class="p-4 bg-gray-100 shadow md:px-6 md:py-8 dark:bg-gray-800">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a href="https://flowbite.com" class="flex items-center mb-4 sm:mb-0">
                     <img src="/src/images/logo.svg" class="mr-3 h-8" alt="Flowbite Logo" />

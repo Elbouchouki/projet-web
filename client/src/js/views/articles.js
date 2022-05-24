@@ -1,5 +1,3 @@
-import "../components/header.js";
-
 export default class {
   constructor(props) {
     document.title = props.title;

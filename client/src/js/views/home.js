@@ -1,16 +1,13 @@
-import "../components/header.js";
-
+import "../components/lastestArticles";
+import LatestArticles from "../components/lastestArticles";
 export default class {
   constructor(props) {
     document.title = props.title;
   }
   async render() {
     return /*html*/ `
-        
-        <h1 class="text-3xl font-bold underlin">
-          Hello world!
-        </h1>
-        <p>Simple click counter</p>
+        <lastest-articles></lastest-articles>
+        ${await new LatestArticles().render()}
         `;
   }
 }
