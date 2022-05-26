@@ -1,3 +1,6 @@
+const multer = require("multer");
+const multerConfig = require("../config/multer");
+const articlesRouter = require("express").Router();
 const {
   CreateArticleController,
 } = require("../useCases/articles/createArticle/CreateArticleController");
@@ -21,7 +24,6 @@ const {
 } = require("../useCases/categorieOnArticle/deleteArticleFromCategorie/deleteArticleFromCategorieController");
 
 const { ensureAuthenticated } = require("../middleware/ensureAuthenticated");
-const articlesRouter = require("express").Router();
 const createArticleController = new CreateArticleController();
 const getAllArticlesController = new GetAllArticlesController();
 const getArticleController = new GetArticleController();
@@ -35,7 +37,12 @@ const deleteArticleFromCategorieController =
 articlesRouter.get("/", getAllArticlesController.handle);
 articlesRouter.get("/:id", getArticleController.handle);
 articlesRouter.patch("/", ensureAuthenticated, updateArticleController.handle);
-articlesRouter.post("/", ensureAuthenticated, createArticleController.handle);
+articlesRouter.post(
+  "/",
+  ensureAuthenticated,
+  multer(multerConfig).single("image"),
+  createArticleController.handle
+);
 articlesRouter.delete(
   "/:id",
   ensureAuthenticated,
