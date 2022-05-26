@@ -1,3 +1,5 @@
+import AllArticles from "./components/allArticles";
+
 const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
@@ -6,4 +8,6 @@ const validateEmail = (email) => {
     );
 };
 
-export { validateEmail };
+const AllArticlesComponent = new AllArticles();
+
+export { validateEmail, AllArticlesComponent };

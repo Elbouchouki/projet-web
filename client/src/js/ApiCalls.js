@@ -5,7 +5,13 @@ const getArticles = async (take, skip) => {
     API_URL + `article?take=${take || -1}&skip=${skip || -1}`
   );
   const articles = await res.json();
-  return articles.articles;
+  return articles?.articles;
 };
 
-export { getArticles };
+const getCategories = async () => {
+  const res = await fetch(API_URL + `categorie`);
+  const categories = await res.json();
+  return categories?.categories;
+};
+
+export { getArticles, getCategories };

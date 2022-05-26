@@ -1,4 +1,3 @@
-import { getArticles } from "../ApiCalls";
 import { navigateTo } from "../routes";
 
 // New component

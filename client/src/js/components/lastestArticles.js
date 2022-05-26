@@ -9,7 +9,6 @@ export default class LatestArticles {
   }
   async fetchArticles() {
     const articles = await getArticles(10, 0);
-    console.log(articles);
     this.articles = articles;
   }
 
