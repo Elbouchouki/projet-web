@@ -14,4 +14,17 @@ const getCategories = async () => {
   return categories?.categories;
 };
 
-export { getArticles, getCategories };
+const authenticateUser = async ({ user }) => {
+  const { email, password } = user;
+  const res = await fetch(API_URL + `auth/login`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email: email, password: password }),
+  });
+  return res;
+};
+
+export { getArticles, getCategories, authenticateUser };

@@ -19,10 +19,14 @@ export default class LatestArticles {
     for (const article of this.articles) {
       htmlArticles += await new ArticleCard({ article }).render();
     }
-    return /*html*/ `
-    <div id="lastestArticlesGrid" class="grid mt-10 grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-3">
-        <div  class="my-4 col-span-full	 text-2xl font-bold dark:text-white">Latest Articles</div>
-        ${htmlArticles}
+    return /* HTML */ ` <div
+      id="lastestArticlesGrid"
+      class="grid mt-10 grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-3"
+    >
+      <div class="my-4 col-span-full	 text-2xl font-bold dark:text-white">
+        Latest Articles
+      </div>
+      ${htmlArticles}
     </div>`;
   }
 }

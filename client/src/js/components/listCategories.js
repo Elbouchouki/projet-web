@@ -30,14 +30,17 @@ export default class ListCategories {
     });
 
     $(document).on("click", ".catBtnParg ", function (e) {
-      console.log("wow");
       $(e.target).parent().trigger("click");
     });
 
-    return /*html*/ `
-    <div id="lastestArticlesGrid" class="grid mt-10 grid-cols-2 gap-5 mx-10 place-items-center md:grid-cols-3 lg:grid-cols-4">
-        <div  class="my-4 col-span-full	 text-2xl font-bold dark:text-white">Categories</div>
-        ${htmlCategories}
+    return /* HTML */ ` <div
+      id="lastestArticlesGrid"
+      class="grid mt-10 grid-cols-2 gap-5 mx-10 place-items-center md:grid-cols-3 lg:grid-cols-4"
+    >
+      <div class="my-4 col-span-full	 text-2xl font-bold dark:text-white">
+        Categories
+      </div>
+      ${htmlCategories}
     </div>`;
   }
 }

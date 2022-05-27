@@ -5,8 +5,6 @@ export default class {
     document.title = props.title;
   }
   async render() {
-    return /*html*/ `
-        ${await new ListCategories().render()}
-        `;
+    return /* HTML */ ` ${await new ListCategories().render()} `;
   }
 }

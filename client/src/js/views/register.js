@@ -4,10 +4,10 @@ export default class {
     document.title = props.title;
   }
   async render() {
-    return /*html*/ `
-    <div class="flex items-center justify-center min-h-full ">
-          <register-form></register-form>
-    </div>
+    return /* HTML */ `
+      <div class="flex items-center justify-center min-h-full ">
+        <register-form></register-form>
+      </div>
     `;
   }
 }
