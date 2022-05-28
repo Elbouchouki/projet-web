@@ -16,6 +16,14 @@ class GetArticleUseCase {
             },
           },
         },
+        author: {
+          select: {
+            id: true,
+            nom: true,
+            email: true,
+            role: true,
+          },
+        },
       },
     });
     return article;
