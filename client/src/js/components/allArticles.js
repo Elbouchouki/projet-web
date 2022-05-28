@@ -45,6 +45,7 @@ export default class AllArticles {
 
   async render() {
     await this.fetchArticles();
+    AllArticles.articlesCount = 0;
     return /* HTML */ ` <div
       class="grid mt-10 grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-3"
     >

@@ -8,6 +8,12 @@ const getArticles = async (take, skip) => {
   return articles?.articles;
 };
 
+const getArticle = async (id) => {
+  const res = await fetch(API_URL + `article/${id}`);
+  const article = await res.json();
+  return article;
+};
+
 const getCategories = async () => {
   const res = await fetch(API_URL + `categorie`);
   const categories = await res.json();
@@ -27,4 +33,4 @@ const authenticateUser = async ({ user }) => {
   return res;
 };
 
-export { getArticles, getCategories, authenticateUser };
+export { getArticles, getCategories, authenticateUser, getArticle };

@@ -4,6 +4,7 @@ import login from "./views/login.js";
 import register from "./views/register.js";
 import categories from "./views/categories.js";
 import categorie from "./views/categorie.js";
+import article from "./views/article.js";
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -28,8 +29,10 @@ const navigateTo = (url) => {
 const routes = [
   { path: "/", view: home, title: "Home" },
   { path: "/articles", view: articles, title: "Articles" },
+  { path: "/articles/:id", view: article, title: "Articles" },
   { path: "/categories", view: categories, title: "Categories" },
   { path: "/categories/:id", view: categorie, title: "Categorie" },
+
   { path: "/login", view: login, title: "Login" },
   { path: "/register", view: register, title: "Register" },
 ];
