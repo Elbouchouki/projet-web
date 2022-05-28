@@ -24,6 +24,13 @@ class GetArticleUseCase {
             role: true,
           },
         },
+        commentaire: {
+          select: {
+            id: true,
+            email: true,
+            contenu: true,
+          },
+        },
       },
     });
     return article;

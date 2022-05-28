@@ -5,7 +5,6 @@ class GetArticleController {
     const { id } = req.params;
     const getArticleUseCase = new GetArticleUseCase();
     const article = await getArticleUseCase.execute(parseInt(id));
-    console.log(article);
     res.json({
       id: article.id,
       titre: article.titre,
@@ -17,6 +16,7 @@ class GetArticleController {
       authorId: article.authorId,
       categories: article.categories,
       author: article.author,
+      commentaire: article.commentaire,
     });
   }
 }

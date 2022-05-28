@@ -25,7 +25,6 @@ class DeleteArticleFromCategorieUseCase {
       throw new Error(
         `Article '${articleExists.titre}' Doesn't belong to Categorie '${categorieExists.nom}'`
       );
-    console.log(articleCategorieExists);
     await client.categoriesOnArticles.delete({
       where: {
         articleId_categorieId: {
