@@ -5,7 +5,19 @@ class GetArticleController {
     const { id } = req.params;
     const getArticleUseCase = new GetArticleUseCase();
     const article = await getArticleUseCase.execute(parseInt(id));
-    res.json({ article });
+    console.log(article);
+    res.json({
+      id: article.id,
+      titre: article.titre,
+      contenu: article.contenu,
+      image: process.env.BASE_URL + "/ressources/" + article.image,
+      createdAt: article.createdAt,
+      updatedAt: article.updatedAt,
+      published: article.published,
+      authorId: article.authorId,
+      categories: article.categories,
+      author: article.author,
+    });
   }
 }
 module.exports = { GetArticleController };

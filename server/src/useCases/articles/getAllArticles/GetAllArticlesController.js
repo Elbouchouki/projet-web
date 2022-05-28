@@ -13,7 +13,10 @@ class GetAllArticlesController {
     if (skipping)
       articles = articles.slice(skipping, skipping + articles.length);
     if (taking) articles = articles.slice(0, taking);
-
+    articles = articles.map((article) => {
+      article.image = process.env.BASE_URL + "/ressources/" + article.image;
+      return article;
+    });
     res.json({ articles });
   }
 }
