@@ -1,5 +1,6 @@
 import { navigateTo } from "../routes";
 import { validateEmail } from "../helper";
+import { registerUser } from "../ApiCalls";
 // New component
 class Register extends HTMLElement {
   constructor() {
@@ -184,11 +185,7 @@ class Register extends HTMLElement {
     const textCss = "text-gray-500 dark:text-gray-400";
 
     // State
-    const validateForm = () => {
-      const name = $("#name").val();
-      const email = $("#email-address").val();
-      const password = $("#password").val();
-      const passwordR = $("#repeat-password").val();
+    const validateForm = (name, email, password, passwordR) => {
       var flag = true;
       if (name == "") {
         setError("name", "Empty field", true);
@@ -258,15 +255,19 @@ class Register extends HTMLElement {
       }, time);
     };
 
-    $("#register-form").submit((e) => {
+    $("#register-form").submit(async (e) => {
       setLoading();
       setNormal("name", true);
       setNormal("email-address", true);
       setNormal("password", false);
       setNormal("repeat-password", false);
       e.preventDefault();
-      if (validateForm()) {
-        console.log("register user");
+      const name = $("#name").val();
+      const email = $("#email-address").val();
+      const password = $("#password").val();
+      const passwordR = $("#repeat-password").val();
+      if (validateForm(name, email, password, passwordR)) {
+        await registerUser({ user: { name, email, password } });
         setAlert(4000);
         setLoading();
       } else {

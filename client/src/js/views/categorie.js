@@ -1,11 +1,15 @@
+import ArticleCategorie from "../components/articleCategorie";
+
 export default class {
   constructor(props) {
     document.title = props.title;
-    console.log(props);
+    this.id = props.id;
   }
   async render() {
     return /* HTML */ `
-      <h1 class="text-3xl font-bold underlin">Categorie</h1>
+      <div class="flex justify-center">
+        ${await new ArticleCategorie(this.id).render()}
+      </div>
     `;
   }
 }

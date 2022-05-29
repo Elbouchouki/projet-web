@@ -19,6 +19,11 @@ const getCategories = async () => {
   const categories = await res.json();
   return categories?.categories;
 };
+const getCategorie = async (id) => {
+  const res = await fetch(API_URL + `categorie/${id}`);
+  const categorie = await res.json();
+  return categorie?.categorie;
+};
 
 const authenticateUser = async ({ user }) => {
   const { email, password } = user;
@@ -32,5 +37,27 @@ const authenticateUser = async ({ user }) => {
   });
   return res;
 };
+const registerUser = async ({ user }) => {
+  const { email, name, password } = user;
+  await fetch(API_URL + `auth/register`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email,
+      nom: name,
+      password: password,
+    }),
+  });
+};
 
-export { getArticles, getCategories, authenticateUser, getArticle };
+export {
+  getArticles,
+  getCategories,
+  authenticateUser,
+  getArticle,
+  getCategorie,
+  registerUser,
+};

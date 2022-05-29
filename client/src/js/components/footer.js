@@ -20,7 +20,7 @@ class Footer extends HTMLElement {
               >Elbou-blog</span
             >
           </span>
-          <ul
+          <!--<ul
             class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
           >
             <li>
@@ -37,7 +37,7 @@ class Footer extends HTMLElement {
             <li>
               <a href="#" class="hover:underline">Contact</a>
             </li>
-          </ul>
+          </ul>-->
         </div>
         <hr
           class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
@@ -49,12 +49,6 @@ class Footer extends HTMLElement {
         </span>
       </footer>
     `;
-
-    // State
-    const toggleNav = () => {
-      $("#nav-mobile").toggle();
-    };
-    $(".toggle-nav").click(toggleNav);
   }
 }
 

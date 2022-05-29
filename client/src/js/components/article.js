@@ -9,8 +9,6 @@ export default class Article {
   async fetchArticle() {
     const article = await getArticle(this.id);
     this.article = article;
-    console.log(article);
-    console.log(new Date(article.createdAt));
   }
 
   async render() {
@@ -21,20 +19,12 @@ export default class Article {
       return `<span class="bg-${col}-100 text-yel${col}low-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-${col}-200 dark:text-${col}-900">${catName}</span>`;
     };
     var categoriesHTML = "";
-    // const x = [{ name: "asd1" }, { name: "asd2" }, { name: "asd3" }];
-    // var texty = "";
-    // x.map((el) => {
-    //   texty += `${el.name}`;
-    //   console.log(el.name);
-    // });
-    // console.log(texty);
     await this.article?.categories?.map((cat) => {
       categoriesHTML += `${categorie(
         cat?.categorie?.nom[0]?.toUpperCase() +
           cat?.categorie?.nom?.slice(1, cat?.categorie?.nom?.length)
       )}`;
     });
-    console.log(categoriesHTML);
 
     return /* HTML */ `
       <section

@@ -83,5 +83,4 @@ $(document).on("click", "#all-articles-pagination-button", async () => {
   $("#AllArticlesGridContainer").append($(newHTML));
   const newPagination = await AllArticlesComponent.reRenderPagination();
   $("#all-articles-pagination").html($(newPagination));
-  // console.log($("all-articles-pagination"));
 });

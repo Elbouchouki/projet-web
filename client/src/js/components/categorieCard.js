@@ -22,6 +22,3 @@ export default class CategorieCard {
     `;
   }
 }
-// const response = await getArticles();
-// const articles = await response.json();
-// console.log(articles);

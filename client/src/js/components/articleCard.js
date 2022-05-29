@@ -45,10 +45,6 @@ export default class ArticleCard {
 }
 $(document).on("click", ".articleRedirect", (e) => {
   e.preventDefault();
-  console.log(e.target.href);
   history.pushState("", "", e.target.href);
   router();
 });
-// const response = await getArticles();
-// const articles = await response.json();
-// console.log(articles);
