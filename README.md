@@ -171,6 +171,13 @@ Run unit tests
   yarn test
 ```
 
+#### Seeding exemple
+![Execution of seeder](/screens/seed.png)
+
+#### Unit test exemple
+![Execution of unit test](/screens/test.png)
+
+
 ## frontend
 
 Project structure
@@ -234,3 +241,17 @@ Start the server
 
 - [@Elbouchouki Ahmed](https://github.com/Elbouchouki/)
 
+
+## Screenshots
+#### Home page dark mode :
+![HOME DARK](/screens/home-dark.png)
+#### Articles page light mode :
+![ARTICLES LIGHT](/screens/Articles-light.png)
+#### Categorie page light mode :
+![CATEGORIE LIGHT](/screens/categories-light.png)
+#### Other page dark mode :
+![OTHER DARK](/screens/other-dark.png)
+#### Home mobile dark mode :
+![HOME MOBILE DARK](/screens/home-dark-mobile.png)
+#### Home mobile light mode :
+![HOME MOBILE DARK](/screens/home-light-mobile.png)
