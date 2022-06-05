@@ -247,8 +247,14 @@ Start the server
 ![HOME DARK](/screens/home-dark.png)
 #### Articles page light mode :
 ![ARTICLES LIGHT](/screens/Articles-light.png)
+#### Details of an articles dark mode :
+![DETAILS ARTICLE DARK](/screens/details-Article-dark.png)
+#### Details of an articles light mode :
+![DETAILS ARTICLE LIGHT](/screens/details-Article-light.png)
 #### Categorie page light mode :
 ![CATEGORIE LIGHT](/screens/categories-light.png)
+#### Details of a categorie dark mode :
+![DETAILS CATEGORIE DARK](/screens/details-categorie-dark.png)
 #### Other page dark mode :
 ![OTHER DARK](/screens/other-dark.png)
 #### Home mobile dark mode :
