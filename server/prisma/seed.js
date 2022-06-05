@@ -38,18 +38,19 @@ async function seed() {
     data: categories,
   });
   console.log("Seeding Categories Done!");
-
+  let i = 0;
   for (const article of articles) {
     await client.article.create({
       data: {
         published: article.published,
-        image: article.image,
+        image: `image(${i++}).jpg`,
         titre: article.titre,
         contenu: article.contenu,
         authorId: article.authorId,
         commentaire: article.commentaire,
       },
     });
+    if (i > 24) i = 0;
   }
   console.log("Seeding Articles Done!");
   await client.categoriesOnArticles.createMany({
