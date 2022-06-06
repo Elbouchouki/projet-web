@@ -7,6 +7,18 @@ Clone the project
   git clone https://github.com/Elbouchouki/projet-web
 ```
 
+## Demo
+
+#### Frontend : https://elbouchouki.github.io/
+`NB: Some of the functionnalities won't work , please fork the repo and run it localy`
+#### Backend  : https://projet-web-s2.herokuapp.com/
+
+## Tech Stack
+
+**Client:** JQuery , HTML , CSS , TailwindCSS
+
+**Server:** NodeJS, ExpressJS, Prisma, JWT
+
 ## Backend
 
 Project structure
