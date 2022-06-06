@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node srx/index.js",
+    "start": "node src/index.js",
     "test": "mocha test/index.test.js"
   },
   "prisma": {
