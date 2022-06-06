@@ -9,9 +9,9 @@ Clone the project
 
 ## Demo
 
-#### Frontend : https://elbouchouki.github.io/
+#### Frontend : [elbouchouki.client](https://elbouchouki.github.io/projet-web)
 `NB: Some of the functionnalities won't work , please fork the repo and run it localy`
-#### Backend  : https://projet-web-s2.herokuapp.com/
+#### Backend  : [elbouchouki.server](https://projet-web-s2.herokuapp.com/)
 
 ## Tech Stack
 
