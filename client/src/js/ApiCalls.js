@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:4000/";
+const API_URL = "https://projet-web-s2.herokuapp.com/";
 
 const getArticles = async (take, skip) => {
   const res = await fetch(
